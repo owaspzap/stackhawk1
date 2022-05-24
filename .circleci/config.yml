@@ -1,5 +1,5 @@
 orbs:
-  stackhawk: stackhawk/stackhawk@x.y.z
+  stackhawk: stackhawk/stackhawk@1.0.5
 
 version: 2.1
 
