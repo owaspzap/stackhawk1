@@ -6,12 +6,24 @@ app:
   env: Development # (required)
   # -- The url of your application to scan --
   host: https://zap.productplan.com # (required)
+  antiCsrfParam: _pplan_session
   authentication:
+    # Paths that HawkScan checks to see if it is still logged in during the scan
+    loggedInIndicator: "\\\\QSign Out\\\\E"
+    loggedOutIndicator: "\\\\QSign In\\\\E"
+    # Auth(N) HTTP Form
     usernamePassword:
-      scanUsername: ${USERNAME}
-      scanPassword: ${PASSWORD}
+      type: FORM
+      loginPagePath: /users/sign_in # Your login form path
+      loginPath: /users/sign_in # Your login form path
+      usernameField: user[email] # Field name for the account username/email
+      passwordField: user[password] # Field name for the password
+      scanUsername: ${USERNAME} # Inject variable at runtime or place your username here
+      scanPassword: ${PASSWORD} # Inject variable at runtime or place your password here
+      
 
-#
+# https://www.stackhawk.com/blog/security-testing-authenticated-app-routes-part-1-cookie-authentication/
+
 # -- Customized Configuration for GraphQL/SOAP/OpenAPI, add here --
   # openApiConf:
   #   path: /swagger.json # OR...
