@@ -1,0 +1,11 @@
+orbs:
+  stackhawk: stackhawk/stackhawk@x.y.z
+
+version: 2.1
+
+workflows:
+  scan-remote:
+    jobs:
+      - stackhawk/hawkscan-remote:
+          configuration-files: stackhawk.yml
+          host: 'https://zap.productplan.com'
