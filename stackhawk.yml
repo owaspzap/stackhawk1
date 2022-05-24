@@ -7,7 +7,7 @@ app:
   # -- The url of your application to scan --
   host: https://zap.productplan.com # (required)
 
-
+#
 # -- Customized Configuration for GraphQL/SOAP/OpenAPI, add here --
   # openApiConf:
   #   path: /swagger.json # OR...
