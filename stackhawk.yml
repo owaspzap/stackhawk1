@@ -22,7 +22,7 @@ app:
       scanPassword: ${PASSWORD} # Inject variable at runtime or place your password here
     cookieAuthorization:
       cookieNames:
-        - _pplan_session
+        - "_pplan_session"
     testPath:
       path: /roadmaps
       success: ".*2[0-9]{2}.*"
