@@ -16,8 +16,8 @@ app:
       type: FORM
       loginPagePath: /users/sign_in # Your login form path
       loginPath: /users/sign_in # Your login form path
-      usernameField: user[email] # Field name for the account username/email
-      passwordField: user[password] # Field name for the password
+      usernameField: email # Field name for the account username/email
+      passwordField: password # Field name for the password
       scanUsername: ${USERNAME} # Inject variable at runtime or place your username here
       scanPassword: ${PASSWORD} # Inject variable at runtime or place your password here
     cookieAuthorization:
@@ -27,6 +27,11 @@ app:
       path: /roadmaps
       success: ".*2[0-9]{2}.*"
       requestMethod: GET
+
+
+# usernameField: user[email] # Field name for the account username/email
+# passwordField: user[password] # Field name for the password
+#
 
 # https://www.stackhawk.com/blog/security-testing-authenticated-app-routes-part-1-cookie-authentication/
 
